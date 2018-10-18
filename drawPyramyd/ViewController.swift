@@ -29,8 +29,7 @@ class ViewController: UIViewController {
      Ну и финальная drawPyramydUI(count) которая отличается от лесенки лишь сдвигом по х на (size+5)/2
 
      Сделал отдельные методы drawStringCubeX drawStairsCube которые принимают лишь count
-     и самостоятельно  делают строку и лесенку. Потому что для финальной пирамиды мне пришлось передавать из функции в
-     функцию аргументы
+     и самостоятельно  делают строку и лесенку. Потому что для финальной пирамиды мне пришлось передавать из функции в функцию аргументы
      
  */
     func drawBox(_ size:Int, _ x:Int, _ y:Int) {
@@ -60,14 +59,8 @@ class ViewController: UIViewController {
     }
     
     func drawStringCube(_ count: Int,xpos:Int,ypos:Int, size:Int) {
-        //var n = count
-        // let size = 259 / count - 5
-        // var x = 80
-        // var y = 500
         var x = xpos
         let y = ypos
-        
-        
         for _ in 0..<count {
             drawBox(size, x, y)
             x+=size + 5
@@ -96,7 +89,7 @@ class ViewController: UIViewController {
         var n = count               // копируем в n чтобы уменьшать количество в каждой строке
         for i in 0..<count {
             for _ in 0..<count {
-                drawStringCube(n, xpos:xpos, ypos: ypos, size:size)
+                drawStringCube(n, xpos:xpos, ypos:ypos, size:size)
             }
             xpos+=(size+5)/2                   // сдвиг по Х вправо
             ypos = 500 - (size + 5)*(i+1)      // сдвиг по У вверх
